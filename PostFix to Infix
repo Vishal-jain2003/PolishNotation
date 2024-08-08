@@ -1,0 +1,22 @@
+// POSTFIX TO INFIX ONLY USING STACK 
+class Solution {
+    static String postToInfix(String exp) {
+        // code here
+        Stack<String>st = new Stack<>();
+        for (char c:exp.toCharArray())
+        {
+            if (Character.isLetterOrDigit(c))
+            {
+                st.push(String.valueOf(c));
+            }
+            else if (c=='+' || c=='-' || c=='*' || c=='/' || c=='^')
+            {
+              String c2=st.pop();
+              String  c1 =st.pop();
+               st.push('('+c1+c+c2+')');
+              
+            }
+        }
+        return st.pop();
+    }
+}
