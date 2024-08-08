@@ -1,8 +1,12 @@
 // Infix TO PREFIX
 
 1.Reverse Infix
-2.Infix to PostFix
+2.Infix to PostFix [REMEMBER HERE ONLY PRIORITY(CHARACTER)  <  PRIORITY(ST.PEEK())]  BUT IN POSTFIX CASE IT IS <=
 3.REverse Answer
+4.*** ALSO REMEMBER WHILE REVERSING YOU HAVE TO ALSO REVERSE THE PARENTHESIS ALSO 
+
+"(A+B)*C-D+F";
++-*+ABCDF
 
 import java.util.Stack;
 
