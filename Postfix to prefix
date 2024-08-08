@@ -1,0 +1,22 @@
+// Postfix to Prefix
+
+class Solution {
+    static String postToPre(String post_exp) {
+        // code here
+        Stack<String>st = new Stack<>();
+        for (char c:post_exp.toCharArray())
+        {
+            if (Character.isLetterOrDigit(c))
+            {
+                st.push(String.valueOf(c));
+            }
+            else
+            {
+                String op2=st.pop();
+                String op1=st.pop();
+                st.push(c+op1+op2);  // IMPORTANT 
+            }
+        }
+        return st.pop();
+    }
+}
