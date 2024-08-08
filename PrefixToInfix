@@ -1,0 +1,27 @@
+// PREFIX TO INFIX 
+
+class Solution {
+    static String preToInfix(String pre_exp) {
+        // code here
+        Stack<String>st = new Stack<>();
+        int i=pre_exp.length()-1;
+        while(i>=0)
+        {
+            char c =pre_exp.charAt(i);
+            if (Character.isLetterOrDigit(c))
+            {
+                st.push(String.valueOf(c));
+            }
+            else
+            {
+                String op1=st.pop();
+                String op2=st.pop();
+                st.push('('+op1+c+op2+')');
+            }
+            i--;
+            
+            
+        }
+        return st.pop();
+    }
+}
